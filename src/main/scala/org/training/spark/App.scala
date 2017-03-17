@@ -18,8 +18,8 @@ object App {
 
     val conf = new SparkConf().setMaster("local").setAppName("wordcount")
     val sc = new SparkContext(conf)
-    val file = sc.textFile("/home/zhangzhibo/IdeaProjects/wordcount/data.csv")
-    //  val file = sc.textFile("hdfs://master:9000/user/hadoop/modedata/data2.csv")
+    val file = sc.textFile("/home/zhangzhibo/IdeaProjects/wordcount/data2.csv")
+    //      val file = sc.textFile("hdfs://master:9000/user/hadoop/modedata/data2.csv")
 
     val lines = file.flatMap(line => line.split(","))
 
@@ -90,8 +90,11 @@ object App {
     val str2 = "abd"
     val stest = "1000222"
     var ma = tmp.mapValues(str => edit.editdistance(str, stest))
+    ma = ma.filter(p => p._2 == 1.0)
     ma = ma.sortByKey()
-    ma.foreach(println)
+    //    ma.top(20).foreach(println)
+    ma.takeOrdered(50).foreach(println)
+
     val similiraty: Float = edit.editdistance(str1, str2)
     println(similiraty)
 
