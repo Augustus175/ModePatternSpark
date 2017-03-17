@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/wordcount.iml" filepath="$PROJECT_DIR$/wordcount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ModeMatching.iml" filepath="$PROJECT_DIR$/ModeMatching.iml" />
     </modules>
   </component>
 </project>

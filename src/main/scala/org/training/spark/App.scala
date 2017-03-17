@@ -1,6 +1,4 @@
-package org.training.spark
-
-;
+package org.training.spark;
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
@@ -18,7 +16,8 @@ object App {
 
     val conf = new SparkConf().setMaster("local").setAppName("wordcount")
     val sc = new SparkContext(conf)
-    val file = sc.textFile("/home/zhangzhibo/IdeaProjects/wordcount/data2.csv")
+//    val file = sc.textFile("/home/zhangzhibo/IdeaProjects/wordcount/data2.csv")
+    val file = sc.textFile("D:\\IdeJavaWorkPlace\\wordcount\\data2.csv")
     //      val file = sc.textFile("hdfs://master:9000/user/hadoop/modedata/data2.csv")
 
     val lines = file.flatMap(line => line.split(","))
